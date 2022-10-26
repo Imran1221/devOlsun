@@ -1,15 +1,12 @@
-FROM ubuntu:16.04
+FROM python:3.8-slim-buster
 
 LABEL maintainer="ImranHakan <inf20033@lehre.dhbw-stuttgart.de>"
-
-RUN apt-get update -y 
-RUN apt-get install -y python-pip python-dev
 
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . /app
 
