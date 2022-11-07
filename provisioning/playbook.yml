@@ -1,0 +1,24 @@
+---
+-name:setup
+remote_user:vagrant
+
+task:
+name: Upgrade all apt packages
+  apt: upgrade=dist force_apt_get=yes
+
+name: install python and pip
+  apt:
+    name:
+    -python3
+    -python3-pip
+    state: latest
+    update-cache: true
+
+name: install dependecies
+  ansible.builtin.pip:
+    executable: pip3
+    requirements: requirements.txt
+    extra_args: -r
+
+name: start application
+  shell: python3 -m flask run --host:0.0.0.0
