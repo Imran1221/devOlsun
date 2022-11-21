@@ -133,3 +133,4 @@ dmypy.json
 
 #Terraform
 terraform/.tfstate
+terraform/.terraform*
