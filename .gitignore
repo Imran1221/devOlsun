@@ -132,4 +132,4 @@ dmypy.json
 .vagrant/
 
 #Terraform
-terraform/.tfvars
+terraform/.tfstate
