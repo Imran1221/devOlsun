@@ -27,7 +27,7 @@ resource "azurerm_service_plan" "app-service-plan" {
 }
 
 resource "azurerm_linux_web_app" "app"{
-    name = "app-dhbw-test123"
+    name = "app-dhbw-testhakan"
     resource_group_name = azurerm_resource_group.rg-devolsun.name
     location = azurerm_resource_group.rg-devolsun.location
     service_plan_id = azurerm_service_plan.app-service-plan.id
