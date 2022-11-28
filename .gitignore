@@ -130,3 +130,10 @@ dmypy.json
 
 #Vagrant
 .vagrant/
+
+#Terraform
+terraform/.tfstate
+terraform/.terraform*
+terraform/terraform.*
+
+
