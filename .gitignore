@@ -135,5 +135,7 @@ dmypy.json
 terraform/.tfstate
 terraform/.terraform*
 terraform/terraform.*
+#SonarQube Scanner
+.scannerwork/
 
 
