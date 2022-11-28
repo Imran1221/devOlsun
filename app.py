@@ -21,11 +21,14 @@ def hello():
 
    if name:
        print('Request for hello page received with name=%s' % name)
-       return render_template('hello.html', name = name)
+       resGreeting = greeting(name)
+       return render_template('hello.html', greeting = resGreeting)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
+def greeting(name):
+    return "Hello " + name
 
 if __name__ == '__main__':
    app.run()
