@@ -1,22 +1,26 @@
 name: Python build and test
-  
+
 on:
+  #push:
+   # branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build_and_test:
+    runs-on: ubuntu-22.04 #ubuntu latest gives deprication warning
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - name: Set up Python 3.10
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with: 
-          python-version: '3,10'
+          python-version: '3.10'
       - name: Install dependencies
-        run:
+        run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
-        run: 
-          pytest
+        run: |
+          python -m pytest -v
