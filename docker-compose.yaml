@@ -17,10 +17,8 @@ services:
       - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - app
-
-
+  
   grafana:
-    container_name: grafana
     image: grafana/grafana:latest
     volumes:
       - ./grafana/config.ini:/etc/grafana/grafana.ini

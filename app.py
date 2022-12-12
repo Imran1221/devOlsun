@@ -6,7 +6,6 @@ from prometheus_flask_exporter import PrometheusMetrics
 app = Flask(__name__)
 PrometheusMetrics(app)
 
-
 @app.route('/')
 def index():
    print('Request for index page received')
