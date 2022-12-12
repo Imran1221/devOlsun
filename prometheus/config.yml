@@ -1,4 +1,3 @@
-KONFIGURATION
 global:
   scrape_interval: 3s
 
