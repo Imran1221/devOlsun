@@ -20,7 +20,7 @@ services:
 
 
   grafana:
-  container_name: grafana
+    container_name: grafana
     image: grafana/grafana:latest
     volumes:
       - ./grafana/config.ini:/etc/grafana/grafana.ini
