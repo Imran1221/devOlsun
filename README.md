@@ -33,3 +33,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 python -m pytest -v
 ```
+
+## Prometheus & Grafana
+Start all docker container from docker-compose (flaskApp, prometheus, grafana)
+```
+docker-compose up -d
+docker-compose down
+```
+
+1. Open Grafana with "localhost:3000"
+2. Edit Panel
+3. Switch Datasource query to prometheus
+4. Add the metrik you want as example "process_resident_memory-bytes(job="devops")"
+5. Take the json model to the example.
